@@ -13,9 +13,12 @@ public class MainController {
     @Value("${server.port:8080}")
     private int serverPort;
 
+    @Value("${HOSTNAME:unknown}")
+    private String hostname;
+
     @GetMapping("")
     public String sayHello(){
-        return "Hello from app {" + appName + "}. It is on port {" + serverPort + "}";
+        return "Hello from app {" + appName + "}. It is on hostname {" + hostname + "} port {" + serverPort + "}";
     }
 
 }
